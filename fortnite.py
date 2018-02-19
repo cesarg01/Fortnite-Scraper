@@ -33,14 +33,14 @@ def build_string_for_squad_stats(data):
     # Convert data to string and split based on the parameters specified to easily loop throught the list
     new_data = ''.join(new_data)
     new_data = new_data.split('}, {')
-    #print(new_data[0])
-
+    
+    # Get the stats between the start and end variables.
     for value in new_data:
         start = 'displayValue\': \''
         end = '\''
         stats.append((value.split(start))[1].split(end)[0])
     
-        #stats_friends += '*'+x+'*\n'
+        
     stats_friends += 'Played time: '+ stats[13] + '\n'
     stats_friends += 'Top 1: '+ stats[2] +'\n'
     stats_friends += 'Top 3: '+ stats[3] +'\n'
